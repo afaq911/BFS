@@ -3,14 +3,14 @@ import React, { useEffect } from "react";
 import "../../styles/success.css";
 import Image from "next/image";
 import { axiosinstance } from "@/utils/axiosinstance";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { EmptyCart } from "@/redux/cartSlice";
 
-const Success = ({ searchParams }) => {
+const Success = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const stripe_id = searchParams?.payment_intent;
+  const stripe_id = useSearchParams().get("payment_intent");
 
   useEffect(() => {
     const ConfirmOrderStatus = async () => {
@@ -30,7 +30,7 @@ const Success = ({ searchParams }) => {
     };
 
     stripe_id && ConfirmOrderStatus();
-  }, []);
+  }, [stripe_id]);
 
   return (
     <div className="mainSuccessContainer">

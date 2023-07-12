@@ -75,12 +75,10 @@ const Shop = ({ searchParams }) => {
     router.push(`/shop`, { shallow: true });
   };
 
-  console.log(category, subCategories);
-
   useEffect(() => {
-    setCategory(searchParams?.category);
-    setSubCategories(searchParams?.subCategory);
-    setSearch(searchParams?.searchQuery);
+    searchParams?.category && setCategory(searchParams?.category);
+    searchParams?.subCategory && setSubCategories(searchParams?.subCategory);
+    searchParams?.searchQuery && setSearch(searchParams?.searchQuery);
   }, [searchParams]);
 
   return (

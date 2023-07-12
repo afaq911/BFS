@@ -12,11 +12,13 @@ import ShopSubCategories from "@/components/ShopSubCategories";
 import { axiosinstance } from "@/utils/axiosinstance";
 import SendIcon from "@mui/icons-material/Send";
 import ClearIcon from "@mui/icons-material/Clear";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const Shop = () => {
   const router = useRouter();
-  const { category: paramsCategory, subCategory, searchQuery } = router.query;
+  const paramsCategory = useSearchParams().get("category");
+  const subCategory = useSearchParams().get("subCategory");
+  const searchQuery = useSearchParams().get("searchQuery");
   const [data, setData] = useState();
   const [searchedData, setSearchedData] = useState();
   const [isLoading, setIsLoading] = useState();

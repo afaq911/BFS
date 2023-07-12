@@ -129,6 +129,17 @@
   font-size: 0.8rem;
 }
 
+.categoryBxIcons {
+  background: var(--primary-color);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .categoryBxIcons svg {
   height: 2rem;
   width: 2rem;

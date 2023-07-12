@@ -19,6 +19,21 @@
   text-align: center;
 }
 
+.backtoHomeBtn {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  padding: 10px 20px;
+  background: #fff;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--black-color);
+  font-weight: 600;
+  font-family: "Inter";
+}
+
 .checkoutProgressMainHeading h2 {
   font-size: 2.5rem;
   font-family: "Inter";
@@ -70,6 +85,21 @@
   overflow: hidden;
 }
 
+.progress_wrapper {
+  position: relative;
+}
+
+.label_progress {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: var(--light-gray);
+  font-family: "Inter";
+  white-space: nowrap;
+}
+
 .progressBx.active::after {
   position: absolute;
   content: "";
@@ -116,7 +146,7 @@
 
 .mainShippingAddressForm {
   width: 70%;
-  margin: 70px auto 0px auto;
+  margin: 90px auto 0px auto;
   padding: 30px 0px;
   border: 1px solid var(--extra-light-gray);
   border-radius: 15px;
@@ -260,7 +290,7 @@
   align-items: center;
 }
 
-form {
+.innerStripPaymentContainer form {
   width: 50%;
   min-width: 500px;
   align-self: center;
@@ -547,3 +577,176 @@ form {
   justify-content: center;
 }
 /* ORDER CONFIMATION ------------------------------------------------------- */
+
+/* ------------------------------- CHECKOUT RESPONSIVE FEATURE ----------------------- */
+
+@media (max-width: 950px) {
+  .mainShippingAddressForm {
+    width: 100%;
+  }
+
+  /* COnfirm payment  */
+
+  .mainConfirmationContainer {
+    flex-direction: column-reverse;
+  }
+
+  .confirmProducts {
+    width: 100%;
+  }
+
+  .confirmDetails {
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    top: 0;
+  }
+
+  .innerConfirmDetails {
+    width: 100%;
+  }
+
+  .confirmandPayBtn {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    background: #fff;
+    padding: 10px 0px;
+  }
+
+  .confirmandPayBtn button {
+    width: 95%;
+  }
+
+  .mainChexkoutOrderConfirmation {
+    padding: 50px 0px 90px 0px;
+  }
+}
+
+@media (max-width: 850px) {
+  .mainCheckoutContainer {
+    padding: 0px;
+  }
+
+  .maincheckoutAuthContainer {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px 0px;
+    margin-top: 50px;
+  }
+
+  .skipcheckoutContainer {
+    border-top: 1px solid var(--extra-light-gray);
+    padding: 40px 0px 20px 0px;
+    border-left: none;
+  }
+
+  .innerCheckoutContainer .innerAuthenticationContainer {
+    padding: 0px;
+  }
+
+  .innerCheckoutContainer .mainAuthenticationFormCard {
+    padding: 0px 20px 20px 20px;
+  }
+
+  .checkoutProgressMainHeading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  .checkoutProgressMainHeading .backtoHomeBtn {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 20px 0px;
+  }
+
+  .checkoutProgressMainHeading h2 span svg {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .checkoutProgressMainHeading h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .progressBx {
+    height: 35px;
+    width: 35px;
+  }
+
+  .mainchekoutProgress {
+    height: 4px;
+  }
+
+  .progressBx h2 {
+    font-size: 1rem;
+  }
+
+  .checkoutProgressMainHeading h2 {
+    font-size: 1.6rem;
+  }
+
+  .innerShippingAddressForm .inputBxGrid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px 0px;
+    margin: 15px 0px;
+  }
+
+  .innerShippingAddressForm .inputBx {
+    margin: 0px;
+  }
+
+  .mainShippingAddressForm h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .inputBx.mobile {
+    margin-bottom: 20px;
+  }
+
+  /* STRIPE PAYMENT FLOW --------------------------------------------- */
+
+  .innerStripPaymentContainer form {
+    min-width: auto;
+    width: 100%;
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .skipCheckoutBtn h2 {
+    font-size: 1.5rem;
+  }
+
+  .progressBx {
+    height: 30px;
+    width: 30px;
+  }
+
+  .progressBx h2 {
+    font-size: 0.9rem;
+  }
+
+  .label_progress {
+    font-size: 0.6rem;
+    bottom: -20px;
+  }
+
+  .quantityInputBx h2 {
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .confirmProducts .quantityInputBx input {
+    height: 35px;
+    max-width: 50px;
+  }
+}

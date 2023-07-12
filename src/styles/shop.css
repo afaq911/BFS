@@ -286,6 +286,40 @@
   width: 100%;
 }
 
+.showMoreProducts {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showMoreProducts .viewAllbth {
+  margin: 80px auto 0px auto;
+  padding: 14px 40px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+}
+
+.showMoreProducts .viewAllbth span {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewAllbth:disabled {
+  opacity: 0.7;
+}
+
 /* RESPONSIVE STYLING HERE ----------------------------------------------- */
 
 @media (max-width: 950px) {

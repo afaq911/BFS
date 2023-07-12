@@ -329,10 +329,6 @@
     display: none;
   }
 
-  .mainHeroCounts {
-    max-width: 50%;
-  }
-
   .innerCategoriesDropDown {
     grid-template-columns: repeat(4, 1fr);
   }

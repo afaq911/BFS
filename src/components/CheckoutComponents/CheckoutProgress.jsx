@@ -1,8 +1,14 @@
 "use client";
 import React from "react";
 import HttpsIcon from "@mui/icons-material/Https";
+import Link from "next/link";
 
-let progressArray = [1, 2, 3, 4];
+let progressArray = [
+  { id: 1, label: "Login" },
+  { id: 2, label: "Shipping Address" },
+  { id: 3, label: "Confirm Order" },
+  { id: 4, label: "Payment" },
+];
 
 const CheckoutProgress = ({ stage }) => {
   let width = stage * 33.3;
@@ -10,19 +16,15 @@ const CheckoutProgress = ({ stage }) => {
   return (
     <>
       <div className="checkoutProgressMainHeading">
+        <Link href={"/cart"} className="backtoHomeBtn">
+          Back to Cart
+        </Link>
+
         <h2>
           <span>
             <HttpsIcon />
           </span>
-          Secure Checkout - ({" "}
-          {stage === 0
-            ? "Login"
-            : stage === 1
-            ? "Order Details"
-            : stage === 2
-            ? "Confirm Order"
-            : "Payment"}{" "}
-          )
+          Secure Checkout
         </h2>
       </div>
 
@@ -30,11 +32,20 @@ const CheckoutProgress = ({ stage }) => {
         <div className="innerCheckoutBackline">
           {progressArray?.map((item) => {
             return (
-              <div
-                className={`progressBx ${stage >= item - 1 ? "active" : ""}`}
-                key={item}
-              >
-                <h2>{item}</h2>
+              <div className="progress_wrapper" key={item?.id}>
+                <div
+                  className={`progressBx ${
+                    stage >= item?.id - 1 ? "active" : ""
+                  }`}
+                >
+                  <h2>{item?.id}</h2>
+                </div>
+                <p
+                  className="label_progress"
+                  style={{ color: stage >= item?.id - 1 && "#FA698E" }}
+                >
+                  {item?.label}
+                </p>
               </div>
             );
           })}

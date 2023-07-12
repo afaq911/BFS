@@ -13,16 +13,16 @@ const CheckoutCard = () => {
       <div className="innerCHeckoutCard">
         <div className="totalTabcheckout">
           <p>You&apos;re Paying</p>
-          <h2>£{subTotal}</h2>
+          <h2>£{subTotal + 50 + 29.5}</h2>
         </div>
 
         <div className="paymentsDetails">
           <h4>Sub total</h4>
-          <h2>£900</h2>
+          <h2>£{subTotal}</h2>
         </div>
         <div className="paymentsDetails">
           <h4>Shipping</h4>
-          <h2>£100</h2>
+          <h2>£50</h2>
         </div>
         <div className="paymentsDetails">
           <h4>Tax</h4>

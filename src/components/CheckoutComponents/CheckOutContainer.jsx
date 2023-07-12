@@ -1,6 +1,6 @@
 "use client";
 import "../../styles/cartpage.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CheckoutProgress from "./CheckoutProgress";
 import ShippingAddress from "./ShippingAddress";
 import StripePayment from "./StripePayment/StripePayment";
@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import CheckOutAuth from "./CheckOutAuth";
 
 const CheckOutContainer = () => {
+  const cart = useSelector((state) => state.cart.cart);
   const currentUser = useSelector((state) => state.user.user);
   const [stage, setStage] = useState(currentUser ? 1 : 0);
   const [values, setValues] = useState({
@@ -22,6 +23,12 @@ const CheckOutContainer = () => {
       ? setValues((prev) => ({ ...prev, [name]: e }))
       : setValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
+  useEffect(() => {
+    if (!cart?.length) {
+      window.location.href = "/";
+    }
+  }, [cart]);
 
   return (
     <div className="mainCheckoutContainer">

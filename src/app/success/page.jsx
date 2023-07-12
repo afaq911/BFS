@@ -6,6 +6,7 @@ import { axiosinstance } from "@/utils/axiosinstance";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { EmptyCart } from "@/redux/cartSlice";
+import Link from "next/link";
 
 const Success = () => {
   const router = useRouter();
@@ -29,7 +30,7 @@ const Success = () => {
       }
     };
 
-    stripe_id && ConfirmOrderStatus();
+    stripe_id ? ConfirmOrderStatus() : router.push("/");
   }, [stripe_id]);
 
   return (
@@ -48,7 +49,9 @@ const Success = () => {
 
           <p>You will recive a order confirmation call to arrange delivery .</p>
 
-          <button>Continue Shoping</button>
+          <Link href={"/shop"}>
+            <button>Continue Shoping</button>
+          </Link>
         </div>
       </div>
     </div>

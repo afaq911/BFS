@@ -56,7 +56,7 @@ const StripeCheckoutForm = ({ orderDetails, values }) => {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `http://localhost:3000/success`,
+        return_url: process.env.NEXT_PUBLIC_SUCCESS_URL,
         payment_method_data: {
           billing_details: {
             address: {

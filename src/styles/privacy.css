@@ -1,0 +1,30 @@
+.mainPrivacyContainer {
+  width: 100%;
+  padding: 50px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerPricyContainer {
+  max-width: 1200px;
+  width: 95%;
+}
+
+.innerPricyContainer h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Inter";
+  color: var(--black-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.innerPricyContainer p {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter";
+  color: var(--gray-color);
+  text-align: start;
+  line-height: 1.8rem;
+}

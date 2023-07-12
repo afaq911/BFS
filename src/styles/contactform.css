@@ -1,0 +1,236 @@
+.mainContactusForm {
+  width: 100%;
+  padding: 50px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contactFormHeading {
+  width: 95%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.contactFormHeading h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Inter";
+  color: var(--black-color);
+  text-transform: uppercase;
+}
+
+.innerContactForm {
+  width: 95%;
+  max-width: 1200px;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* FORM DESIGN --------------------------------------------------------- */
+
+.formContainer {
+  width: 95%;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.formContainer .inputBx {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 15px 0px;
+}
+
+.formContainer .inputBx label {
+  width: 100%;
+  font-size: 1rem;
+  color: var(--black-color);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.formContainer .inputBx input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--extra-light-gray);
+  padding: 0px 15px;
+  font-size: 1rem;
+  color: var(--black-color);
+  border-radius: 4px;
+}
+
+.formContainer .inputBx textarea {
+  width: 100%;
+  height: 140px;
+  border: 1px solid var(--extra-light-gray);
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: var(--black-color);
+  border-radius: 4px;
+  resize: none;
+}
+
+.formSubmitBtn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.formSubmitBtn button {
+  width: 100%;
+  height: 50px;
+  background: var(--black-color);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Other contact details ------------------------------------------- */
+
+.otherContactDetails {
+  width: 90%;
+  margin: 0px auto;
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid var(--extra-light-gray);
+}
+
+.innerOtherContactDetails {
+  background: #f3f5f7;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.innerOtherContactDetails .otherDetailsBx:last-child {
+  border-bottom: none;
+}
+
+.otherDetailsBx {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0px;
+  border-bottom: 1px solid var(--extra-light-gray);
+}
+
+.otherDetailsIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  margin-right: 15px;
+  color: #fff;
+}
+
+.otherDetailsInfo {
+  flex: 1;
+}
+
+.otherDetailsInfo h2 {
+  font-size: 1.2rem;
+  color: var(--black-color);
+  font-weight: 600;
+  font-family: "Inter";
+  margin-bottom: 5px;
+}
+
+.otherDetailsInfo p {
+  font-size: 1rem;
+  color: var(--gray-color);
+  font-weight: 500;
+  font-family: "Inter";
+}
+
+.followsocialcontact {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: "Inter";
+  color: var(--black-color);
+  margin: 30px 0px 20px 0px;
+}
+
+.contactSocailMedia {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  place-items: center center;
+}
+
+.contactSocailMedia label {
+  width: 100%;
+  height: 45px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactSocailMedia label.Facebook {
+  background: #1773eb;
+}
+.contactSocailMedia label.Twitter {
+  background: #18b2e4;
+}
+.contactSocailMedia label.Instagram {
+  background: #f66347;
+}
+.contactSocailMedia label.Youtube {
+  background: #f70a10;
+}
+
+/* RESPONSIVE DESIGN CODE ------------------------------------------- */
+
+@media (max-width: 950px) {
+  .innerContactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .formContainer {
+    margin-bottom: 40px;
+  }
+
+  .formContainer,
+  .otherContactDetails {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .formGrid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0px;
+  }
+
+  .contactFormHeading h2 {
+    font-size: 2rem;
+  }
+}
+
+/* RESPONSIVE DESIGN CODE ------------------------------------------- */

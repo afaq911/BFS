@@ -1,0 +1,372 @@
+@import "node_modules/nprogress/nprogress.css";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+:root {
+  --primary-color: #fa698e;
+  --secondary-color: #7c4eff;
+  --yellow-color: #fac069;
+  --gray-color: #8e8e8e;
+  --light-gray: #a1a1a1;
+  --extra-light-gray: #e0e0e0;
+  --black-color: #292d32;
+  --green-color: #88d3b5;
+  --red-color: #ed5e68;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* RATING STARS INACTIVE COLORS -------------------- */
+
+.css-1c99szj-MuiRating-icon {
+  color: #f6f6f6;
+}
+
+/* ----------------------- BACK BLUR ITEMS -------------------------  */
+
+.backBlurBxs {
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  background: var(--secondary-color);
+  filter: blur(200px);
+  z-index: -10;
+  opacity: 0.5;
+}
+
+.backBlurBxs.first {
+  top: 30%;
+  left: 50%;
+}
+
+.backBlurBxs.second {
+  top: 30%;
+  left: 10%;
+  background: var(--primary-color);
+}
+
+.backBlurBxs.third {
+  top: 30%;
+  right: 5%;
+  background: var(--yellow-color);
+}
+
+.backBlurBxs.fourth {
+  bottom: 0%;
+  right: 0%;
+  background: var(--secondary-color);
+}
+
+/* QUANTITY INPUT HERE ------------------------------------- */
+
+.quantityInputBx {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.quantityInputBx button {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: var(--black-color);
+  font-size: 1.4rem;
+}
+
+.quantityInputBx input {
+  height: 40px;
+  max-width: 80px;
+  padding: 0px 20px;
+  border: 1px solid var(--light-gray);
+  border-radius: 30px;
+  font-size: 1rem;
+  color: var(--black-color);
+  text-align: center;
+  outline: none;
+  margin: 0px 7px;
+}
+
+.quantityInputBx input::-webkit-outer-spin-button,
+.quantityInputBx input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.quantityInputBx input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* RATING STARS ------------------------------------- */
+
+.productCardRatings span {
+  line-height: 1.8rem !important;
+}
+
+/* AUTHENTICATION CONTAINERS AND CARD STYLEING ------------------------------------------ */
+
+.backBtnAuthentication {
+  position: absolute;
+  top: 5%;
+  left: 2.5%;
+}
+
+.backBtnAuthentication a {
+  text-decoration: none;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  background: #fff;
+  color: var(--primary-color);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backBtnAuthentication a svg {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+.mainAuthenticationContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dd5e89; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f7bb97,
+    #dd5e89
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f7bb97,
+    #dd5e89
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.innerAuthenticationContainer {
+  max-width: 1200px;
+  width: 95%;
+  padding: 50px 0px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mainAuthenticationFormCard {
+  width: 40%;
+  min-width: 400px;
+  background: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(10px);
+  padding: 30px 40px;
+  border-radius: 10px;
+}
+
+.mainAuthenticationFormCard button:disabled {
+  opacity: 0.5 !important;
+}
+
+.AuthenticationForm {
+  width: 100%;
+}
+
+.authenticationHeading {
+  width: 100%;
+  text-align: center;
+}
+
+.authenticationHeading h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Inter";
+  color: var(--black-color);
+}
+
+.authenticationHeading p {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.inputAuthenticationContainer {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.inputBxGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px 20px;
+}
+
+.inputBx {
+  height: 50px;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.inputBx.mobile {
+  position: relative;
+}
+
+.inputBx.mobile label {
+  position: absolute;
+  bottom: 10px;
+  font-size: 0.8rem;
+  top: 110%;
+  font-family: "Inter";
+  color: var(--gray-color);
+  font-weight: 400;
+}
+
+.inputBx .react-tel-input {
+  height: 100%;
+}
+
+.inputBx .react-tel-input input {
+  height: 100%;
+  width: 100%;
+}
+
+.inputBx input {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--extra-light-gray);
+  outline-color: var(--primary-color);
+  padding: 0px 25px;
+  font-size: 1rem;
+  color: var(--black-color);
+  font-weight: 500;
+  font-family: "Inter";
+}
+
+.inputBx input::placeholder {
+  color: var(--light-gray);
+  font-weight: 400;
+}
+
+.inputAuthenticationContainer button {
+  width: 100%;
+  height: 50px;
+  background: var(--primary-color);
+  border-radius: 4px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Inter";
+}
+
+.orAuthenticationLine {
+  width: 100%;
+  height: 1px;
+  background: var(--extra-light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0px;
+}
+
+.orAuthenticationLine h2 {
+  font-size: 1rem;
+  color: var(--light-gray);
+  padding: 2px 4px;
+  background: #fff;
+  font-weight: 500;
+}
+
+.otherLoginOptions {
+  width: 100%;
+}
+
+.otherLoginOptions button {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: 1px solid var(--extra-light-gray);
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Inter";
+  border-radius: 30px;
+  color: var(--black-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otherLoginOptions button svg {
+  margin-right: 15px;
+}
+
+.bottomtextForm {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomtextForm p {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Inter";
+  color: var(--light-gray);
+}
+
+.bottomtextForm p a {
+  font-weight: 600;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* AUTHENTICATION RESPONSIVE ------------------------------------------- */
+
+@media (max-width: 600px) {
+  .innerAuthenticationContainer {
+    padding: 70px 0px;
+  }
+
+  .backBtnAuthentication {
+    position: absolute;
+    top: 2.5%;
+    left: 2.5%;
+  }
+
+  .backBtnAuthentication a {
+    text-decoration: none;
+    height: 40px;
+    width: 40px;
+  }
+
+  .mainAuthenticationFormCard {
+    min-width: 100%;
+    padding: 30px 20px;
+  }
+}
+
+/* AUTHENTICATION CONTAINERS AND CARD STYLEING ------------------------------------------ */

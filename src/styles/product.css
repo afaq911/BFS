@@ -1,0 +1,463 @@
+.mainViewProduct {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0px;
+}
+
+.innerViewProduct {
+  max-width: 1200px;
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0px 40px;
+}
+
+.ViewProductImages {
+  width: 100%;
+}
+
+.viewProductDisplayImg {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f6f6f6;
+}
+
+.MainProductDisplayImg {
+  mix-blend-mode: darken;
+}
+
+.viewProductDisplayImagesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 20px;
+  grid-gap: 0px 10px;
+}
+
+.displayGridImgBx {
+  height: 100px;
+  width: 100%;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f6f6f6;
+}
+
+.displayGridImgBx.active {
+  border: 2px solid var(--primary-color);
+}
+
+.ProductOtherImages {
+  mix-blend-mode: darken;
+}
+
+/* PRODUCT INFO DETAILS HERE -------------------------------------------------- */
+
+.ViewProductDetails {
+  width: 100%;
+}
+
+.ViewProductDetails .titleProduct {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Inter";
+}
+
+.ViewProductDetails .ProductDescription {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--light-gray);
+  font-family: "Poppins";
+  margin: 15px 0px;
+}
+
+.ProductDescription span {
+  color: var(--primary-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* RATINGS -------------------------------------- */
+
+.productRatings {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ratingsStars {
+  margin-right: 15px;
+}
+
+.productRatings p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.productRatings p span {
+  display: block;
+  margin-left: 8px;
+  color: var(--primary-color);
+}
+
+/* ---------------------------------------- AVAIALBE COLORS----------------------- */
+
+.productColorsAvailble {
+  margin: 20px 0px;
+}
+
+.productColorsAvailble h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+  font-family: "Inter";
+}
+
+.colorsTabAvailable {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.colorsTabAvailable label {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: transparent;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.colorsTabAvailable label.active {
+  border: 1.2px solid var(--gray-color);
+}
+
+.colorsTabAvailable label.red span {
+  background: #9d1e37;
+}
+.colorsTabAvailable label.pink span {
+  background: var(--primary-color);
+}
+.colorsTabAvailable label.black span {
+  background: var(--black-color);
+}
+.colorsTabAvailable label.yellow span {
+  background: yellow;
+}
+
+.colorsTabAvailable label span {
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+}
+
+/* SIZES UPDATES------------------------------------------------------------- */
+
+.sizesTabAvailable {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.sizesTabAvailable label {
+  padding: 10px 20px;
+  border: 1px solid var(--extra-light-gray);
+  margin: 5px 15px 5px 0px;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 4px;
+}
+
+.sizesTabAvailable label span {
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-family: "Inter";
+}
+
+/* PRODUCT QUALITY HERE -------------------------------------------------- */
+
+.productQualityAvailble {
+  margin-top: 25px;
+}
+
+.productQualityAvailble h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+  font-family: "Inter";
+  margin-bottom: 15px;
+}
+
+.quantityInputBx {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.quantityInputBx button {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: var(--black-color);
+  font-size: 1.4rem;
+}
+
+.quantityInputBx input {
+  height: 40px;
+  max-width: 80px;
+  padding: 0px 20px;
+  border: 1px solid var(--light-gray);
+  border-radius: 30px;
+  font-size: 1rem;
+  color: var(--black-color);
+  text-align: center;
+  outline: none;
+  margin: 0px 7px;
+}
+
+.quantityInputBx input::-webkit-outer-spin-button,
+.quantityInputBx input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.quantityInputBx input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Call to action btns --------------------------------------------- */
+
+.productCallToAction {
+  margin-top: 30px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productCallToAction button {
+  height: 55px;
+  width: 60%;
+  padding: 0px 60px;
+  background: var(--primary-color);
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productCallToAction button span {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productCallToAction button span svg {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+.productCallToAction .SingleProductPrice {
+  width: 35%;
+  height: 55px;
+  padding: 0px 40px;
+  border: 1px solid var(--light-gray);
+  color: var(--black-color);
+  background: transparent;
+  border-radius: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* OR LINE WITH OTHER ORDER PLACEMENTS ---------------------------------- */
+
+.orLineShopingOptions {
+  width: 100%;
+  margin: 50px 0px 30px 0px;
+  height: 0.5px;
+  background: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orLineShopingOptions p {
+  padding: 0px 10px;
+  background: #fff;
+  font-size: 1rem;
+  color: var(--gray-color);
+}
+
+/* OTHER CALL TO ACTIONS HERE ------------------------------------------ */
+
+.othercalltoactionsHeading {
+  font-size: 1.1rem;
+  color: var(--black-color);
+  font-weight: 600;
+  font-family: "Inter";
+}
+
+.otherBuyingOptions {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.otherBuyingOptions button {
+  padding: 0px 30px;
+  height: 48px;
+  border: 1px solid var(--light-gray);
+  color: var(--black-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Inter";
+  background: transparent;
+  outline: none;
+  margin-right: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otherBuyingOptions button span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.viewProductDisplayImg:hover .sliderIconsMainSLiderImg {
+  opacity: 1;
+  transition: 0.2s linear;
+}
+
+.sliderIconsMainSLiderImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  transition: 0.2s linear;
+}
+
+.sliderIconsMainSLiderImg label {
+  width: 45px;
+  height: 45px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.sliderIconsMainSLiderImg label svg {
+  padding-left: 5px;
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+/* RESPONSIVE DESIGN FEATURE ------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .innerViewProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .ViewProductDetails {
+    margin-top: 50px;
+  }
+
+  .productCallToAction {
+    position: sticky;
+    bottom: 0;
+    top: 0;
+    background: #fff;
+    padding: 10px 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .productCallToAction .SingleProductPrice {
+    width: 25%;
+    padding: 0px 20px;
+    font-size: 1rem;
+    margin-left: 15px;
+  }
+
+  .productCallToAction button {
+    flex: 1;
+    padding: 0px 20px;
+    font-size: 1.1rem;
+  }
+
+  .viewProductDisplayImg {
+    max-height: 400px;
+  }
+
+  .viewProductDisplayImg img {
+    position: relative;
+  }
+
+  .displayGridImgBx {
+    height: 80px;
+  }
+
+  .otherBuyingOptions {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px 0px;
+  }
+}
+
+/* RESPONSIVE DESIGN FEATURE ------------------------------------------------- */

@@ -1,0 +1,125 @@
+.mainSkeltonContainer {
+  padding: 50px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerSkeltonCOntainer {
+  width: 100%;
+}
+
+.innerSkeltonProductsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.skeltonProductsCards {
+  width: 100%;
+  max-width: 400px;
+}
+
+.skeltonProductCard_img {
+  width: 100%;
+  height: 300px;
+}
+
+.skeltonProduct_Info {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skeltonDetails {
+  flex: 1;
+}
+
+.skelton_price {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+/* FEATURED SKELTON CATEGORIES ------------------------------------------ */
+
+.SekltonFeaturedCategory {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainCategoriesGrid .SekltonFeaturedCategory:nth-child(1) {
+  grid-column: 1 / span 2;
+}
+
+.mainCategoriesGrid .SekltonFeaturedCategory:nth-child(2) {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.mainCategoriesGrid .SekltonFeaturedCategory:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.mainCategoriesGrid .SekltonFeaturedCategory:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* MEDIA QUERIES ------------------------------------------------------- */
+
+@media (max-width: 950px) {
+  .innerSkeltonProductsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mainCategoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .SekltonFeaturedCategory {
+    height: 300px;
+  }
+
+  .mainCategoriesGrid .SekltonFeaturedCategory:nth-child(1) {
+    grid-column: auto;
+  }
+
+  .mainCategoriesGrid .SekltonFeaturedCategory:nth-child(2) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .mainCategoriesGrid .SekltonFeaturedCategory:nth-child(3) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .mainCategoriesGrid .SekltonFeaturedCategory:nth-child(4) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .innerSkeltonProductsGrid {
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    grid-gap: 30px 0px;
+  }
+
+  .mainCategoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

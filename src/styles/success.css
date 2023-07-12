@@ -1,0 +1,62 @@
+.mainSuccessContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerOrderSuccessContainer {
+  width: 95%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.successOrderImage {
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  position: relative;
+}
+
+.orderSuccessDetails {
+  text-align: center;
+}
+
+.orderSuccessDetails h2 {
+  font-size: 2.2rem;
+  font-family: "Inter";
+  font-weight: 700;
+  color: var(--black-color);
+}
+
+.successOrderImage img {
+  position: relative !important;
+}
+
+.orderSuccessDetails p {
+  font-size: 1.1rem;
+  color: gray;
+  margin-top: 10px;
+  font-family: "Inter";
+}
+
+.orderSuccessDetails button {
+  margin-top: 20px;
+  background: #fa698e;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  border-radius: 4px;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  width: 100%;
+}

@@ -1,0 +1,236 @@
+.mainTopCategories {
+  padding: 100px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.innerTopCategories {
+  width: 95%;
+  max-width: 1200px;
+}
+
+.topCategoriesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topCategoriesHeaderInfo {
+  max-width: 70%;
+}
+
+.topCategoriesHeaderInfo h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Inter";
+}
+
+.topCategoriesHeaderInfo p {
+  font-size: 1rem;
+  color: var(--gray-color);
+  margin-top: 10px;
+  line-height: 1.7rem;
+}
+
+.categoryHaederBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  background: linear-gradient(
+    90deg,
+    rgba(250, 105, 142, 0.4011729691876751) 45%,
+    rgba(124, 78, 255, 0.3983718487394958) 100%
+  );
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: "Inter";
+  cursor: pointer;
+}
+
+.categoryHaederBtn span {
+  margin-left: 8px;
+}
+
+/* --------------------------- CATEGORY GRID IMAGES ----------------------------*/
+
+.mainCategoriesGrid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 24% 24% 49%;
+  grid-gap: 1.5%;
+  height: 650px;
+}
+
+.categoryBxs {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.categoryBxs img {
+  position: relative;
+}
+
+.mainCategoriesGrid .categoryBxs:nth-child(1) {
+  grid-column: 1 / span 2;
+}
+
+.mainCategoriesGrid .categoryBxs:nth-child(2) {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.mainCategoriesGrid .categoryBxs:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.mainCategoriesGrid .categoryBxs:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.CategoryImg {
+  object-fit: cover;
+}
+
+.categoryBxDetails {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 105, 142, 0) 43%,
+    rgba(0, 0, 0, 0.698091736694678) 100%
+  );
+}
+
+.categoryBxInfo h2 {
+  color: #fff;
+  font-weight: 500;
+  font-family: "Poppins";
+  font-size: 1.3rem;
+}
+
+.categoryBxInfo p {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.categoryBxIcons svg {
+  height: 2rem;
+  width: 2rem;
+  color: #fff;
+}
+
+/* RESPONSIVE DESIGN CODE ---------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .mainCategoriesGrid {
+    height: 600px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .mainCategoriesGrid {
+    height: 500px;
+  }
+}
+
+@media (max-width: 900px) {
+  .mainCategoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    height: auto !important;
+  }
+
+  .categoryBxs {
+    height: 350px;
+  }
+
+  .mainCategoriesGrid .categoryBxs:nth-child(1) {
+    grid-column: auto;
+  }
+
+  .mainCategoriesGrid .categoryBxs:nth-child(2) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .mainCategoriesGrid .categoryBxs:nth-child(3) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .mainCategoriesGrid .categoryBxs:nth-child(4) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .mainTopCategories {
+    padding: 50px 0px;
+  }
+}
+
+@media (max-width: 750px) {
+  .mainCategoriesGrid {
+    grid-gap: 10px;
+  }
+
+  .categoryBxs {
+    border-radius: 4px;
+  }
+
+  .topCategoriesHeader {
+    justify-content: center;
+  }
+
+  .topCategoriesHeaderInfo {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .topCategoriesHeaderInfo h2 {
+    font-size: 2.5rem;
+  }
+
+  .topCategoriesHeaderInfo p {
+    font-size: 0.9rem;
+  }
+
+  .categoryHaederBtn {
+    display: none;
+  }
+}
+
+/* MAIN MOBILE SCREEN START ---------------------------------------------------- */
+
+@media (max-width: 550px) {
+  .mainCategoriesGrid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px 0px;
+  }
+
+  .topCategoriesHeaderInfo h2 {
+    font-size: 2rem;
+  }
+
+  .topCategoriesHeaderInfo p {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+  }
+}
+
+/* RESPONSIVE DESIGN CODE ---------------------------------------------- */

@@ -1,0 +1,150 @@
+.mainNewLetterContainer {
+  width: 100%;
+  padding: 100px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f5f7;
+}
+
+.innerNewsLetterContainer {
+  max-width: 1200px;
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0px 30px;
+}
+
+.newsLetterSvg {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerSvg {
+  width: 90%;
+  height: 350px;
+  position: relative;
+}
+
+.newsLetterInfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerInfoDetailsNewsletter h2 {
+  font-size: 2.7rem;
+  font-weight: 800;
+  font-family: "Inter";
+}
+
+.innerInfoDetailsNewsletter p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gray-color);
+  margin: 20px 0px 0px 0px;
+}
+
+.newsLetterInput {
+  margin-top: 30px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 55px;
+}
+
+.newsLetterInput input {
+  flex: 1;
+  height: 100%;
+  border: 1px solid #d1d1d1;
+  outline: none;
+  padding: 0px 15px;
+  font-size: 1rem;
+  color: var(--light-gray);
+  background: transparent;
+  font-family: "Poppins";
+}
+
+.newsLetterInput input::placeholder {
+  color: var(--light-gray);
+}
+
+.newsLetterInput button {
+  height: 100%;
+  padding: 0px 30px;
+  border: none;
+  outline: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.mob_newsLetter_btn {
+  height: 100%;
+  padding: 0px 30px;
+  border: none;
+  outline: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* RESPONSIVE CSS STYLING ------------------------------------------------------------------ */
+
+@media (max-width: 950px) {
+  .innerNewsLetterContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .newsLetterInfo .innerInfoDetailsNewsletter {
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .innerInfoDetailsNewsletter .newsLetterInput {
+    margin: 30px auto 0px auto;
+  }
+
+  .newsLetterSvg .innerSvg {
+    width: 60%;
+    margin: 0px auto;
+  }
+}
+
+@media (max-width: 750px) {
+  .newsLetterSvg .innerSvg {
+    width: 100%;
+  }
+
+  .innerInfoDetailsNewsletter .newsLetterInput {
+    width: 100%;
+  }
+
+  .newsLetterInfo .innerInfoDetailsNewsletter {
+    text-align: start;
+  }
+}
+
+@media (max-width: 550px) {
+  .desktop_newsletter_btn {
+    display: none;
+  }
+
+  .mob_newsLetter_btn {
+    display: flex;
+  }
+
+  .newsLetterInput button {
+    width: 20px;
+  }
+}

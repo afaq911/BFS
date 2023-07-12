@@ -1,0 +1,363 @@
+.heroContainer {
+  width: 100%;
+  padding: 40px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.innerHeroContainer {
+  width: 95%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.mainHeroHeading {
+  font-family: "Inter";
+  text-transform: uppercase;
+  font-size: 8.9vw;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.subheading {
+  font-family: "Inter";
+  text-transform: uppercase;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  letter-spacing: 2px;
+}
+
+.heroDetailsInfo {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heroTextInfo {
+  max-width: 55%;
+}
+
+.heroTextInfo p {
+  color: var(--gray-color);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  text-align: start;
+}
+
+.mainHeroCounts {
+  max-width: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.CountBx h2 {
+  font-size: 2.5rem;
+  font-family: "Inter";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.CountBx h2 span {
+  position: relative;
+  height: 33px;
+  width: 100%;
+  margin-left: 5px;
+}
+
+.CountBx p {
+  font-size: 0.9rem;
+  color: var(--gray-color);
+}
+
+.plusImg {
+  color: var(--primary-color);
+  height: 2rem !important;
+  width: 2rem !important;
+}
+
+/*-------------------------- Image Grid------------------------------  */
+
+.heroInnerImages {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 500px;
+}
+
+.LeftImages {
+  width: 74%;
+  height: 100%;
+  position: relative;
+}
+
+.mainLeftImg {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.mainLeftImg img {
+  border-radius: 10px;
+}
+
+.leftTopCornerImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 47%;
+  width: 26%;
+}
+
+.RightImages {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.rightImgBx {
+  width: 100%;
+  position: relative;
+  flex: 1;
+}
+
+.rightImgBx img {
+  border-radius: 10px;
+}
+
+.heroMainImgs {
+  position: relative !important;
+}
+
+.CtaHeroBx {
+  min-height: 205px;
+  margin-top: 10px;
+  flex: 1;
+  width: 100%;
+  background: var(--primary-color);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.CtaHeroBx:hover svg {
+  transform: rotate(45deg);
+  transition: 0.1s linear;
+}
+
+.CtaHeroBx svg {
+  height: 10rem;
+  width: 10rem;
+  color: #fff;
+  transition: 0.1s linear;
+}
+
+/* ----------------------- BACK BLUR ITEMS -------------------------  */
+
+.backBlurBxs {
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  background: var(--secondary-color);
+  filter: blur(200px);
+  z-index: -10;
+}
+
+.backBlurBxs.first {
+  top: 30%;
+  left: 50%;
+}
+
+.backBlurBxs.second {
+  top: 30%;
+  left: 10%;
+  background: var(--primary-color);
+}
+
+.backBlurBxs.third {
+  top: 30%;
+  right: 5%;
+  background: var(--yellow-color);
+}
+
+.backBlurBxs.fourth {
+  bottom: 0%;
+  right: 0%;
+  background: var(--secondary-color);
+}
+
+/* RESPONSIVE DESIGN CODE ------------------------------------------------------------ */
+
+@media (max-width: 1100px) {
+  .heroInnerImages {
+    height: 450px;
+  }
+
+  .heroTextInfo {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .heroInnerImages {
+    height: 400px;
+  }
+
+  .heroTextInfo,
+  .mainHeroCounts {
+    margin: 10px 0px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 850px) {
+  .mainHeroHeading {
+    font-size: 9.5vw;
+    letter-spacing: 0px;
+  }
+
+  .heroInnerImages {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .LeftImages {
+    width: 100%;
+  }
+
+  .RightImages {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  .CtaHeroBx {
+    height: 100%;
+    max-height: auto;
+    margin-top: 0px;
+  }
+
+  .mainLeftImg img,
+  .rightImgBx img,
+  .CtaHeroBx {
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroContainer {
+    overflow-x: hidden;
+  }
+
+  .heroInnerImages {
+    margin-top: 20px;
+  }
+
+  .mainHeroHeading {
+    font-size: 9.5vw;
+    letter-spacing: 0px;
+  }
+
+  .mainHeroCounts {
+    margin-top: 15px;
+  }
+
+  .CountBx h2 {
+    font-size: 2rem;
+  }
+
+  .CountBx p {
+    font-size: 0.8rem;
+  }
+
+  .CountBx h2 span {
+    height: 35px;
+  }
+
+  .plusImg {
+    height: 1.5rem !important;
+    width: 1.5rem !important;
+  }
+
+  .subheading {
+    font-size: 0.8rem !important;
+    padding: 6px 12px !important;
+  }
+}
+
+/* MAIN MOBILE SCREEN START ---------------------------------------------------- */
+
+@media (max-width: 550px) {
+  .heroDetailsInfo {
+    margin-top: 10px;
+  }
+
+  .RightImages {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .heroTextInfo p {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+  }
+
+  .CountBx h2 {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .CountBx p {
+    font-size: 0.8rem;
+  }
+
+  .CountBx h2 span {
+    height: 25px;
+    width: 25px;
+  }
+
+  .plusImg {
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .CountBx h2 {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .CountBx p {
+    font-size: 0.6rem;
+  }
+}
+
+/* RESPONSIVE DESIGN CODE ------------------------------------------------------------ */

@@ -1,0 +1,137 @@
+.mainFooterContainer {
+  padding: 80px 0px;
+  border-top: 1px solid var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerFooterContainer {
+  width: 95%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 40% 20% 20% 20%;
+}
+
+.newsLetterTab {
+  width: 100%;
+}
+
+.newsLetterTab p {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--gray-color);
+}
+
+.newsLetterTab p span {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.newsLetterTab .newsLetterInput {
+  width: 90%;
+}
+
+.newsLetterTab h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Inter";
+}
+
+.footerLinks {
+  width: 80%;
+  margin: 0px auto;
+}
+
+.footerLinks h2 {
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.footerLinks a {
+  text-decoration: none;
+}
+
+.footerLinks a li {
+  list-style-type: none;
+  font-size: 1rem;
+  color: var(--light-gray);
+  margin: 15px 0px;
+  transition: 0.2s linear;
+}
+
+.footerLinks a li:hover {
+  color: var(--primary-color);
+  transition: 0.2s linear;
+}
+
+.footerSocailTabs {
+  width: 100%;
+}
+
+.footerLogo {
+  width: 140px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.footerLogo img {
+  position: relative !important;
+}
+
+.footerSocail h2 {
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.socailMediaIcons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.socailIcon {
+  height: 40px;
+  width: 40px;
+  background: #f3f3f3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.socailIcon:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transition: 0.2s linear;
+}
+
+/* FOOTER RESPONSIVE STYLING ---------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .innerFooterContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .innerFooterContainer {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+  }
+
+  .footerLinks {
+    width: 100%;
+  }
+}
+
+/* FOOTER RESPONSIVE STYLING ---------------------------------------------- */

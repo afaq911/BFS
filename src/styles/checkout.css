@@ -1,0 +1,549 @@
+.mainCheckoutContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0px;
+}
+
+.innerCheckoutContainer {
+  max-width: 1200px;
+  width: 95%;
+}
+
+/* CHECK OUT PROGRESS BAR -------------------------------------------------------------- */
+
+.checkoutProgressMainHeading {
+  width: 100%;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.checkoutProgressMainHeading h2 {
+  font-size: 2.5rem;
+  font-family: "Inter";
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkoutProgressMainHeading h2 span {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkoutProgressMainHeading h2 span svg {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.mainchekoutProgress {
+  width: 100%;
+  position: relative;
+  height: 6px;
+}
+
+.innerCheckoutBackline {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--extra-light-gray);
+  height: 100%;
+}
+
+.progressBx {
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--extra-light-gray);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.progressBx.active::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  max-width: 0px;
+  height: 100%;
+  background: var(--primary-color);
+  top: 0;
+  left: 0;
+  transition: 2s linear;
+}
+
+.progressBx h2 {
+  position: relative;
+  z-index: 10;
+  font-size: 1.2rem;
+  font-family: "Inter";
+}
+
+.progressBx.active {
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+.progressBx.active::after {
+  max-width: 100px;
+  transition: 2s linear;
+}
+
+.progressbarDynamic {
+  width: 33%;
+  height: 100%;
+  background: var(--primary-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: 0.2s linear;
+}
+
+/* CHECK OUT PROGRESS BAR -------------------------------------------------------------- */
+
+/* SHIPPING FORM CONTROL ------------------------------------------------------ */
+
+.mainShippingAddressForm {
+  width: 70%;
+  margin: 70px auto 0px auto;
+  padding: 30px 0px;
+  border: 1px solid var(--extra-light-gray);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mainShippingAddressForm h2 {
+  font-size: 2.5rem;
+  color: var(--black-color);
+  font-family: "Inter";
+  font-weight: 600;
+}
+
+.innerShippingAddressForm {
+  width: 90%;
+  margin-top: 25px;
+}
+
+.innerShippingAddressForm .inputBx {
+  margin: 10px 0px;
+}
+
+.formInnerHeading {
+  font-size: 1.4rem !important;
+  margin: 50px 0px 40px 0px;
+  height: 1px;
+  background: var(--extra-light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formInnerHeading span {
+  padding: 4px 20px;
+  background: #fff;
+}
+
+.mainShippingAddressForm .inputAuthenticationContainer {
+  margin-top: 20px;
+  width: 90%;
+}
+
+/* SHIPPING FORM CONTROL ------------------------------------------------------ */
+
+/* PAYMENT TYPE AND METHOD STYLEING --------------------------------------------- */
+
+.mainPaymentContainer {
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerPaymentContainer {
+  width: 70%;
+  border: 1px solid var(--extra-light-gray);
+  padding: 30px 40px;
+  border-radius: 10px;
+}
+
+.innerPaymentContainer h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--black-color);
+  font-weight: 600;
+  font-family: "Inter";
+}
+
+.paymettypeselectorgrid {
+  width: 100%;
+  margin: 30px 0px 10px 0px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px 0px;
+}
+
+.paymentTypeInputBx {
+  width: 100%;
+  padding: 30px;
+  border: 1px solid var(--extra-light-gray);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.paymentDetailsType {
+  flex: 1;
+}
+
+.paymentDetailsType h4 {
+  font-size: 1.6rem;
+  font-family: "Inter";
+  color: var(--black-color);
+  font-weight: 600;
+}
+
+.paymentDetailsType p {
+  font-size: 1rem;
+  margin-top: 5px;
+  font-family: "Inter";
+  color: var(--light-gray);
+}
+
+.paymentactiveRadioIcons {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.paymentactiveRadioIcons label {
+  height: 25px;
+  width: 25px;
+  border: 1px solid var(--light-gray);
+  border-radius: 50%;
+}
+
+/* PAYMENT TYPE AND METHOD STYLEING --------------------------------------------- */
+
+/* STRIPE Payment ----------------------------------------------------------- */
+
+.mainStripePaymentContainer {
+  width: 100%;
+  padding: 100px 0px 50px 0px;
+}
+
+.innerStripPaymentContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+}
+
+form {
+  width: 50%;
+  min-width: 500px;
+  align-self: center;
+  border: 1px solid var(--extra-light-gray);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+#payment-message {
+  color: rgb(105, 115, 134);
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 12px;
+  text-align: center;
+}
+
+#payment-element {
+  margin-bottom: 24px;
+}
+
+/* Buttons and links */
+.Pay_strip_btn {
+  background: #fa698e;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  border-radius: 4px;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  width: 100%;
+}
+
+.Pay_strip_btn:hover {
+  filter: contrast(115%);
+}
+
+.Pay_strip_btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* spinner/processing state, errors */
+.spinner,
+.spinner:before,
+.spinner:after {
+  border-radius: 50%;
+}
+
+.spinner {
+  color: #ffffff;
+  font-size: 22px;
+  text-indent: -99999px;
+  margin: 0px auto;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  box-shadow: inset 0 0 0 2px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.spinner:before,
+.spinner:after {
+  position: absolute;
+  content: "";
+}
+
+.spinner:before {
+  width: 10.4px;
+  height: 20.4px;
+  background: var(--primary-color);
+  border-radius: 20.4px 0 0 20.4px;
+  top: -0.2px;
+  left: -0.2px;
+  -webkit-transform-origin: 10.4px 10.2px;
+  transform-origin: 10.4px 10.2px;
+  -webkit-animation: loading 2s infinite ease 1.5s;
+  animation: loading 2s infinite ease 1.5s;
+}
+
+.spinner:after {
+  width: 10.4px;
+  height: 10.2px;
+  background: var(--primary-color);
+  border-radius: 0 10.2px 10.2px 0;
+  top: -0.1px;
+  left: 10.2px;
+  -webkit-transform-origin: 0px 10.2px;
+  transform-origin: 0px 10.2px;
+  -webkit-animation: loading 2s infinite ease;
+  animation: loading 2s infinite ease;
+}
+
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    width: 80vw;
+    min-width: initial;
+  }
+}
+
+/* STRIPE Payment ----------------------------------------------------------- */
+
+/* CHECKOUT AUTH CONTAINER ---------------------------- */
+
+.maincheckoutAuthContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0px 40px;
+  margin-top: 40px;
+}
+
+.maincheckoutAuthContainer .innerAuthenticationContainer {
+  width: 100%;
+}
+
+.maincheckoutAuthContainer .mainAuthenticationFormCard {
+  width: 100%;
+  min-width: auto;
+}
+
+.skipcheckoutContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--extra-light-gray);
+}
+
+.innerSkipCheckoutContainer {
+  width: 80%;
+}
+
+.skipCheckoutBtn {
+  width: 100%;
+  text-align: center;
+}
+
+.skipCheckoutBtn h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Inter";
+  color: var(--black-color);
+}
+
+.skipCheckoutBtn button {
+  width: 100%;
+  height: 50px;
+  border: 1px solid var(--extra-light-gray);
+  border-radius: 30px;
+  background: transparent;
+  font-size: 1rem;
+  font-family: "Inter";
+  font-weight: 600;
+  color: var(--black-color);
+  outline: none;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+/* CHECKOUT AUTH CONTAINER ---------------------------- */
+
+/* ORDER CONFIMATION ------------------------------------------------------- */
+
+.mainChexkoutOrderConfirmation {
+  width: 100%;
+  padding: 50px 0px 50px 0px;
+}
+
+.mainConfirmationContainer {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.confirmProducts {
+  width: 70%;
+  border: 1px solid var(--extra-light-gray);
+  border-radius: 20px;
+}
+
+.confirmDetails {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 10px;
+}
+
+.innerConfirmDetails {
+  width: 90%;
+  box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
+    0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+}
+
+.detailsBx {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--extra-light-gray);
+}
+
+.addressDetailsBx .detailsBx:nth-child(4) {
+  border-bottom: none;
+}
+
+.detailsBx p {
+  font-size: 0.9rem;
+  color: gray;
+  font-family: "Inter";
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+
+.detailsBx h4 {
+  font-size: 1.1rem;
+  color: var(--black-color);
+  font-family: "Inter";
+  font-weight: 600;
+}
+
+.confirmandPayBtn {
+  width: 100%;
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmandPayBtn button {
+  width: 90%;
+  height: 50px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Inter";
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#combo-box-demo {
+  border: none;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: 1px solid var(--extra-light-gray) !important;
+  border-radius: 4px !important;
+}
+
+.MuiFormLabel-root {
+  font-family: "Inter" !important;
+  color: var(--light-gray) !important;
+}
+
+.loader_checkout_form {
+  min-width: 280px;
+  height: 300px;
+  width: 60%;
+  margin: 0px auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ORDER CONFIMATION ------------------------------------------------------- */

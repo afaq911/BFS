@@ -14,14 +14,15 @@ import SendIcon from "@mui/icons-material/Send";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useRouter } from "next/navigation";
 
-const Shop = ({ searchParams }) => {
+const Shop = () => {
   const router = useRouter();
+  const { category: paramsCategory, subCategory, searchQuery } = router.query;
   const [data, setData] = useState();
   const [searchedData, setSearchedData] = useState();
   const [isLoading, setIsLoading] = useState();
-  const [category, setCategory] = useState(searchParams?.category);
-  const [subCategories, setSubCategories] = useState(searchParams?.subCategory);
-  const [search, setSearch] = useState(searchParams?.searchQuery);
+  const [category, setCategory] = useState(paramsCategory);
+  const [subCategories, setSubCategories] = useState(subCategory);
+  const [search, setSearch] = useState(searchQuery);
   const [isSearched, setIsSearched] = useState(false);
 
   let AllProducts = isSearched && search ? searchedData : data;
@@ -76,10 +77,10 @@ const Shop = ({ searchParams }) => {
   };
 
   useEffect(() => {
-    searchParams?.category && setCategory(searchParams?.category);
-    searchParams?.subCategory && setSubCategories(searchParams?.subCategory);
-    searchParams?.searchQuery && setSearch(searchParams?.searchQuery);
-  }, [searchParams]);
+    paramsCategory && setCategory(paramsCategory);
+    subCategory && setSubCategories(subCategory);
+    searchQuery && setSearch(searchQuery);
+  }, [paramsCategory, subCategory, searchQuery]);
 
   return (
     <>

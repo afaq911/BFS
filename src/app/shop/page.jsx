@@ -181,30 +181,38 @@ const Shop = () => {
             <ProductsSeklton />
           ) : (
             <div className="mainSHopProfuctsGrid">
-              <div className="shopProductsGrid">
-                {AllProducts?.data?.map((item) => {
-                  return <CardProduct item={item} key={item?.id} />;
-                })}
-              </div>
-              {(AllProducts?.data?.length >= limit ||
-                !limit >= AllProducts?.data?.length) && (
-                <div className="showMoreProducts">
-                  <button
-                    className="viewAllbth"
-                    onClick={LoadMoreProducts}
-                    disabled={isLimitLoading}
-                  >
-                    {isLimitLoading ? (
-                      <CircularProgress color="inherit" size={25} />
-                    ) : (
-                      <>
-                        Load More Products
-                        <span>
-                          <ArrowRightAltIcon />
-                        </span>
-                      </>
-                    )}
-                  </button>
+              {AllProducts?.data?.length ? (
+                <>
+                  <div className="shopProductsGrid">
+                    {AllProducts?.data?.map((item) => {
+                      return <CardProduct item={item} key={item?.id} />;
+                    })}
+                  </div>
+                  {(AllProducts?.data?.length >= limit ||
+                    !limit >= AllProducts?.data?.length) && (
+                    <div className="showMoreProducts">
+                      <button
+                        className="viewAllbth"
+                        onClick={LoadMoreProducts}
+                        disabled={isLimitLoading}
+                      >
+                        {isLimitLoading ? (
+                          <CircularProgress color="inherit" size={25} />
+                        ) : (
+                          <>
+                            Load More Products
+                            <span>
+                              <ArrowRightAltIcon />
+                            </span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="noProductFound">
+                  <h2>No Products</h2>
                 </div>
               )}
             </div>

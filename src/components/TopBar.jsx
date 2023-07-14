@@ -12,7 +12,6 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import Badge from "@mui/material/Badge";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { CategoryDropDown } from "./CategoryDropDown";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useDispatch, useSelector } from "react-redux";
 import { avatarNameHandler } from "@/utils/avatarName";
@@ -20,6 +19,7 @@ import { ListItemIcon, Menu, MenuItem } from "@mui/material";
 import { Logout, Settings } from "@mui/icons-material";
 import { userLogout } from "@/redux/userSlice";
 import { toast } from "react-toastify";
+import CategoryDropDown from "./CategoryDropDown";
 
 const TopBar = () => {
   const currentUser = useSelector((state) => state.user.user);
@@ -41,11 +41,11 @@ const TopBar = () => {
     const CategoryMenu = document.getElementById("TopCaregoryDropdown");
 
     const ActiveClass = () => {
-      CategoryMenu.classList.add("active");
+      CategoryMenu?.classList.add("active");
     };
 
     const RemoveClass = () => {
-      CategoryMenu.classList.remove("active");
+      CategoryMenu?.classList.remove("active");
     };
 
     CategoryTab?.addEventListener("mouseover", ActiveClass);

@@ -45,7 +45,7 @@ const Success = () => {
         </div>
 
         <div className="orderSuccessDetails">
-          <h2>Your Order Has Been Place Successfully</h2>
+          <h2>Your Order Has Been Placed Successfully</h2>
 
           <p>You will recive a order confirmation call to arrange delivery .</p>
 

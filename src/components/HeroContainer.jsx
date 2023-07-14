@@ -8,8 +8,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { axiosinstance } from "@/utils/axiosinstance";
 import Link from "next/link";
+import { Skeleton } from "@mui/material";
 
 const HeroContainer = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState();
 
   const filterData = (data, type) => {
@@ -19,12 +21,15 @@ const HeroContainer = () => {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     const GetBanners = async () => {
       try {
         const res = await axiosinstance.get("/home-banners?populate=*");
         setData(res?.data);
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
+        setIsLoading(false);
       }
     };
 
@@ -67,77 +72,141 @@ const HeroContainer = () => {
           </div>
         </div>
 
-        <div className="heroInnerImages">
-          {data ? (
-            <Carousel
-              className="LeftImages"
-              ariaLabel="Hello"
-              autoPlay
-              emulateTouch
-              infiniteLoop
-              showStatus={false}
-              stopOnHover
-            >
-              {filterData(data, "one")?.map((item) => {
-                return (
-                  <div className="mainLeftImg" key={item?.id}>
-                    <Image
-                      src={
-                        process.env.NEXT_PUBLIC_IMAGE_URL +
-                        item?.attributes?.bannerimg?.data?.attributes?.url
-                      }
-                      alt="ImagesHero"
-                      fill="cover"
-                      className="heroMainImgs"
-                    />
+        {!isLoading ? (
+          <div className="heroInnerImages">
+            {data ? (
+              <Carousel
+                className="LeftImages"
+                ariaLabel="Hello"
+                autoPlay
+                emulateTouch
+                infiniteLoop
+                showStatus={false}
+                stopOnHover
+              >
+                {filterData(data, "one")?.map((item) => {
+                  return (
+                    <div className="mainLeftImg" key={item?.id}>
+                      <Image
+                        src={
+                          process.env.NEXT_PUBLIC_IMAGE_URL +
+                          item?.attributes?.bannerimg?.data?.attributes?.url
+                        }
+                        alt="ImagesHero"
+                        fill="cover"
+                        className="heroMainImgs"
+                        quality={100}
+                      />
 
-                    <div className="textInfoDetails">
-                      <h2>{item?.attributes?.title}</h2>
+                      <div className="textInfoDetails">
+                        <h2>{item?.attributes?.title}</h2>
 
-                      <Link href={item?.attributes?.url}>
-                        <button>Shop Now</button>
-                      </Link>
+                        <Link href={item?.attributes?.url}>
+                          <button>Shop Now</button>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </Carousel>
-          ) : null}
-          <div className="RightImages">
-            {filterData(data, "two")?.length && (
-              <div className="rightImgBx">
-                <Image
-                  src={
-                    process.env.NEXT_PUBLIC_IMAGE_URL +
-                    filterData(data, "two")[0]?.attributes?.bannerimg?.data
-                      ?.attributes?.url
-                  }
-                  fill="cover"
-                  alt="ImagesHero"
-                  className="heroMainImgs"
-                />
+                  );
+                })}
+              </Carousel>
+            ) : null}
+            <div className="RightImages">
+              {filterData(data, "two")?.length && (
+                <div className="rightImgBx">
+                  <Image
+                    src={
+                      process.env.NEXT_PUBLIC_IMAGE_URL +
+                      filterData(data, "two")[0]?.attributes?.bannerimg?.data
+                        ?.attributes?.url
+                    }
+                    fill="cover"
+                    alt="ImagesHero"
+                    className="heroMainImgs"
+                    quality={100}
+                  />
 
-                <div className="right_text_details">
-                  <Link href={filterData(data, "two")[0]?.attributes?.url}>
-                    <h2>Stylish Beds</h2>
-                  </Link>
+                  <div className="right_text_details">
+                    <Link href={filterData(data, "two")[0]?.attributes?.url}>
+                      <h2>Stylish Beds</h2>
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            )}
-            <div className="CtaHeroBx">
-              <label htmlFor="" className="ctx_text">
-                Shop
-              </label>
-              <NorthEastIcon />
+              )}
+
+              <Link href={"/shop"} style={{ width: "100%" }}>
+                <div className="CtaHeroBx">
+                  <label htmlFor="" className="ctx_text">
+                    Shop
+                  </label>
+                  <NorthEastIcon />
+                </div>
+              </Link>
             </div>
           </div>
-        </div>
+        ) : (
+          <LoadingSkeltonHero />
+        )}
       </div>
 
       <div className="backBlurBxs first"></div>
       <div className="backBlurBxs second"></div>
       <div className="backBlurBxs third"></div>
       <div className="backBlurBxs fourth"></div>
+    </div>
+  );
+};
+
+const LoadingSkeltonHero = () => {
+  const styles = { width: "200%", height: "200%" };
+  return (
+    <div className="heroInnerImages">
+      <div className="LeftImages">
+        <div
+          className="mainLeftImg"
+          style={{
+            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Skeleton style={styles} />
+        </div>
+      </div>
+      <div
+        className="RightImages"
+        style={{
+          overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          className="rightImgBx"
+          style={{
+            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: "10px",
+          }}
+        >
+          <Skeleton style={styles} />
+        </div>
+        <div
+          className="CtaHeroBx"
+          style={{
+            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "transparent",
+          }}
+        >
+          <Skeleton style={styles} />
+        </div>
+      </div>
     </div>
   );
 };

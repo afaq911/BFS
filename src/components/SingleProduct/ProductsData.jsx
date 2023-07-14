@@ -13,6 +13,8 @@ import { axiosinstance } from "@/utils/axiosinstance";
 
 const ProductsData = ({ data, productData, setProductData }) => {
   const dispatch = useDispatch();
+  let descriptionLimit = 140;
+  const [showDescription, setShowDescription] = useState(false);
   const [contactNumbers, setContactNumbers] = useState();
   const DirectOrderComponent = dynamic(() => import("../OrderDirectPopup"), {
     ssr: false,
@@ -75,9 +77,20 @@ const ProductsData = ({ data, productData, setProductData }) => {
     <>
       <div className="ViewProductDetails">
         <h2 className="titleProduct">{data?.data?.attributes?.title}</h2>
-        <p className="ProductDescription">
-          {data?.data?.attributes?.description} <span>More</span>
-        </p>
+        {data?.data?.attributes?.description?.length <= descriptionLimit ? (
+          <p className="ProductDescription">
+            {data?.data?.attributes?.description}
+          </p>
+        ) : (
+          <p className="ProductDescription">
+            {showDescription
+              ? data?.data?.attributes?.description
+              : data?.data?.attributes?.description?.slice(0, descriptionLimit)}
+            <span onClick={() => setShowDescription(!showDescription)}>
+              {showDescription ? "Less" : "More"}
+            </span>
+          </p>
+        )}
 
         <div className="productRatings">
           <div className="ratingsStars">

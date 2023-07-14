@@ -225,6 +225,7 @@
 
 .heroMainImgs {
   position: relative !important;
+  object-fit: cover;
 }
 
 .CtaHeroBx {

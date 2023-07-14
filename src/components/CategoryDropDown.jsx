@@ -6,7 +6,7 @@ import $ from "jquery";
 import { axiosinstance } from "@/utils/axiosinstance";
 import CategoryDropDownSkelton from "./Skeltons/CategoryDropDownSkelton";
 
-export const CategoryDropDown = () => {
+const CategoryDropDown = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -76,3 +76,5 @@ export const CategoryDropDown = () => {
     </div>
   );
 };
+
+export default CategoryDropDown;

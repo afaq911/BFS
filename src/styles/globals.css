@@ -29,6 +29,13 @@ a {
   color: #f6f6f6;
 }
 
+/* TOAST */
+
+.Toastify {
+  z-index: 9999999999999999999999 !important;
+  position: relative;
+}
+
 /* ----------------------- BACK BLUR ITEMS -------------------------  */
 
 .backBlurBxs {

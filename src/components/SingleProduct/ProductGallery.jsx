@@ -52,6 +52,7 @@ const ProductGallery = ({ images, color, size }) => {
       (item) =>
         item?.attributes?.caption === size?.replaceAll(" ", "") ||
         item?.attributes?.caption
+          ?.replaceAll(" ", "")
           ?.split(",")
           ?.includes(size?.replaceAll(" ", ""))
     );

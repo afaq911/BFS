@@ -22,6 +22,12 @@
 .mainTopBarLogo {
   height: 60px;
   position: relative;
+  cursor: pointer;
+}
+
+.mainTopBarLogo a {
+  width: auto;
+  height: auto;
 }
 
 .mainTopBarLogo img {

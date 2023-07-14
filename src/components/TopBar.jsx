@@ -80,11 +80,13 @@ const TopBar = () => {
       <div className="mainTopbarContainer">
         <div className="innerTopbarContainer">
           <div className="mainTopBarLogo">
-            <Image
-              src={Logo}
-              alt="British Furniture Suppliers Logo ( BFS )"
-              fill="cover"
-            />
+            <Link href={"/"}>
+              <Image
+                src={Logo}
+                alt="British Furniture Suppliers Logo ( BFS )"
+                fill="cover"
+              />
+            </Link>
           </div>
 
           <div className="mobileViewNavContainer">

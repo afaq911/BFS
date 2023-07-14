@@ -103,14 +103,74 @@
   position: relative;
 }
 
+.ctx_text {
+  display: none;
+}
+
 .mainLeftImg {
   position: relative;
   height: 100%;
   width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.mainLeftImg img {
-  border-radius: 10px;
+.carousel.carousel-slider,
+.slider-wrapper,
+.slider,
+.slide {
+  height: 100% !important;
+}
+
+/* Sliders Next Prev Btns  */
+
+.carousel.carousel-slider .control-arrow {
+  cursor: pointer;
+  background: transparent !important;
+}
+
+.carousel.carousel-slider .control-arrow.control-prev {
+  padding: 0px 10px;
+}
+
+.carousel.carousel-slider .control-arrow.control-next {
+  padding: 0px 10px;
+}
+
+/* Sliders Next Prev Btns  */
+
+.mainLeftImg .textInfoDetails {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainLeftImg .textInfoDetails h2 {
+  font-size: 3.5rem;
+  color: #fff;
+  font-family: "Inter";
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.mainLeftImg .textInfoDetails button {
+  padding: 14px 100px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  outline: none;
 }
 
 .leftTopCornerImg {
@@ -135,6 +195,28 @@
   width: 100%;
   position: relative;
   flex: 1;
+  overflow: hidden;
+}
+
+.right_text_details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  padding: 0px 30px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.right_text_details h2 {
+  font-size: 1.8rem;
+  font-family: "Inter";
+  font-weight: 700;
+  color: var(--black-color);
 }
 
 .rightImgBx img {
@@ -266,6 +348,10 @@
   .CtaHeroBx {
     border-radius: 4px;
   }
+
+  .mainLeftImg .textInfoDetails h2 {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -307,6 +393,23 @@
     font-size: 0.8rem !important;
     padding: 6px 12px !important;
   }
+
+  .mainLeftImg .textInfoDetails h2 {
+    font-size: 2rem;
+  }
+
+  .mainLeftImg .textInfoDetails button {
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
+
+  .LeftImages {
+    height: 340px;
+  }
+
+  .mainLeftImg {
+    border-radius: 5px;
+  }
 }
 
 /* MAIN MOBILE SCREEN START ---------------------------------------------------- */
@@ -344,6 +447,26 @@
   .plusImg {
     height: 1rem;
     width: 1rem;
+  }
+
+  .CtaHeroBx {
+    height: 50px;
+    min-height: auto;
+  }
+
+  .CtaHeroBx svg {
+    height: 2rem;
+    width: 2rem;
+    transform: rotate(45deg);
+  }
+
+  .ctx_text {
+    display: block;
+    margin-right: 10px;
+    font-family: "Inter";
+    font-weight: 600;
+    color: #fff;
+    font-size: 1.2rem;
   }
 }
 

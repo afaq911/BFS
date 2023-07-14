@@ -1,11 +1,36 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/herocontainer.css";
 import { HeroCounts } from "@/constants/WebData";
 import Image from "next/image";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import { axiosinstance } from "@/utils/axiosinstance";
+import Link from "next/link";
 
 const HeroContainer = () => {
+  const [data, setData] = useState();
+
+  const filterData = (data, type) => {
+    return data?.data?.filter(
+      (item) => item?.attributes?.banner_number === type
+    );
+  };
+
+  useEffect(() => {
+    const GetBanners = async () => {
+      try {
+        const res = await axiosinstance.get("/home-banners?populate=*");
+        setData(res?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    GetBanners();
+  }, []);
+
   return (
     <div className="heroContainer">
       <div className="innerHeroContainer">
@@ -43,26 +68,66 @@ const HeroContainer = () => {
         </div>
 
         <div className="heroInnerImages">
-          <div className="LeftImages">
-            <div className="mainLeftImg">
-              <Image
-                src={require("../media/categoryImgs/banner-sofas.png")}
-                alt="ImagesHero"
-                fill="cover"
-                className="heroMainImgs"
-              />
-            </div>
-          </div>
+          {data ? (
+            <Carousel
+              className="LeftImages"
+              ariaLabel="Hello"
+              autoPlay
+              emulateTouch
+              infiniteLoop
+              showStatus={false}
+              stopOnHover
+            >
+              {filterData(data, "one")?.map((item) => {
+                return (
+                  <div className="mainLeftImg" key={item?.id}>
+                    <Image
+                      src={
+                        process.env.NEXT_PUBLIC_IMAGE_URL +
+                        item?.attributes?.bannerimg?.data?.attributes?.url
+                      }
+                      alt="ImagesHero"
+                      fill="cover"
+                      className="heroMainImgs"
+                    />
+
+                    <div className="textInfoDetails">
+                      <h2>{item?.attributes?.title}</h2>
+
+                      <Link href={item?.attributes?.url}>
+                        <button>Shop Now</button>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            </Carousel>
+          ) : null}
           <div className="RightImages">
-            <div className="rightImgBx">
-              <Image
-                src={require("../media/categoryImgs/chair-hero.jpg")}
-                fill="cover"
-                alt="ImagesHero"
-                className="heroMainImgs"
-              />
-            </div>
+            {filterData(data, "two")?.length && (
+              <div className="rightImgBx">
+                <Image
+                  src={
+                    process.env.NEXT_PUBLIC_IMAGE_URL +
+                    filterData(data, "two")[0]?.attributes?.bannerimg?.data
+                      ?.attributes?.url
+                  }
+                  fill="cover"
+                  alt="ImagesHero"
+                  className="heroMainImgs"
+                />
+
+                <div className="right_text_details">
+                  <Link href={filterData(data, "two")[0]?.attributes?.url}>
+                    <h2>Stylish Beds</h2>
+                  </Link>
+                </div>
+              </div>
+            )}
             <div className="CtaHeroBx">
+              <label htmlFor="" className="ctx_text">
+                Shop
+              </label>
               <NorthEastIcon />
             </div>
           </div>

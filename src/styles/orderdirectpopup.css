@@ -1,0 +1,240 @@
+.mainDirectOrderPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 0px;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.innerDirectOrder {
+  width: 70%;
+  height: auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.directOrderPopupHeader {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--extra-light-gray);
+}
+
+.directOrderPopupHeader h2 {
+  font-size: 2rem;
+  font-family: "Inter";
+  color: var(--black-color);
+  font-weight: 700;
+  margin: 0px;
+}
+
+.directOrderPopupHeader button {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.innerBodyOrderPlaceMent {
+  padding: 20px;
+}
+
+.innerBodyOrderPlaceMent .inputBxGrid {
+  grid-gap: 0px 20px;
+}
+
+.productOrderDirectDetails {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid var(--extra-light-gray);
+  border-radius: 10px;
+  background: #f3f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.innerBodyOrderPlaceMent .inputBx {
+  margin: 15px 0px;
+}
+
+.productImg {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.productImg img {
+  object-fit: cover;
+}
+
+.productDetails {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+
+.productDetails h2 {
+  font-size: 1.2rem;
+  color: var(--black-color);
+  font-family: "Inter";
+  font-weight: 700;
+  margin: 0px;
+}
+
+.quanityDirectOrder {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Inter";
+  display: flex;
+  align-items: center;
+}
+
+.quanityDirectOrder .color {
+  padding: 0px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.quanityDirectOrder span {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: "Inter";
+  color: #fff;
+  background: var(--primary-color);
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+.priceDirectOrder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--black-color);
+  font-weight: 700;
+  font-family: "Inter";
+}
+
+.priceDirectOrder span {
+  background: transparent;
+
+  font-weight: 600;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+
+.submitDirectOrder {
+  padding: 10px 20px;
+  background: #fff;
+}
+
+.submitDirectOrder button {
+  height: 50px;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: "Inter";
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.submitDirectOrder button:disabled {
+  opacity: 0.7;
+}
+
+/* RESPONSIVE  */
+
+@media (max-width: 900px) {
+  .innerDirectOrder {
+    width: 90%;
+  }
+}
+
+@media (max-width: 650px) {
+  .mainDirectOrderPopup {
+    padding: 0px;
+  }
+
+  .innerDirectOrder {
+    width: 100%;
+    border-radius: 0px;
+  }
+
+  .productDetails {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px 20px;
+  }
+
+  .priceDirectOrder {
+    justify-content: flex-start;
+  }
+
+  .innerFormDataDetails .inputBxGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .innerFormDataDetails .inputBxGrid .inputBx {
+    margin: 8px 0px;
+  }
+
+  .innerFormDataDetails .inputBxGrid .inputBx.mobile {
+    margin-bottom: 30px;
+  }
+
+  .submitDirectOrder {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .directOrderPopupHeader h2 {
+    font-size: 1.5rem;
+  }
+
+  .productOrderDirectDetails {
+    flex-direction: column;
+  }
+
+  .productImg {
+    width: 100%;
+    height: 140px;
+    margin: 0px 0px 20px 0px;
+  }
+
+  .innerFormDataDetails {
+    padding-bottom: 50px;
+  }
+}

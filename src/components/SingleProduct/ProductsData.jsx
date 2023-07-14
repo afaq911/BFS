@@ -21,7 +21,7 @@ const ProductsData = ({ data, productData, setProductData }) => {
   let newPrice =
     data?.data?.attributes?.price + (productData?.size?.price || 0);
 
-  let whatsAppTextMessage = `Hi , I want to buy ${data?.data?.attributes?.title} (Refrence Link : ${process.env.NEXT_PUBLIC_IMAGE_URL}/product/${data?.data?.id})`;
+  let whatsAppTextMessage = `Hi , I want to buy ${data?.data?.attributes?.title} (Refrence Link : ${window.location.href})`;
 
   // Adding to Cart --------------------------------------------------------------
 

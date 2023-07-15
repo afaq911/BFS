@@ -41,6 +41,18 @@ const RegisterForm = () => {
     }
   };
 
+  // Google Authentication ---------------------------------------------------------
+
+  const HandleGoogleAuth = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axiosinstance.post("/connect/google");
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const HandleValues = (e) => {
     setValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -103,7 +115,7 @@ const RegisterForm = () => {
         </div>
 
         <div className="otherLoginOptions">
-          <button disabled={isLoading}>
+          <button disabled={isLoading} onClick={HandleGoogleAuth}>
             <GoogleIcon /> Continue with Google
           </button>
         </div>

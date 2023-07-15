@@ -127,7 +127,7 @@ const HeroContainer = () => {
 
                   <div className="right_text_details">
                     <Link href={filterData(data, "two")[0]?.attributes?.url}>
-                      <h2>Stylish Beds</h2>
+                      <h2>{filterData(data, "two")[0]?.attributes?.title}</h2>
                     </Link>
                   </div>
                 </div>

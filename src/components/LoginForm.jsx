@@ -43,12 +43,14 @@ const LoginForm = ({ redirect }) => {
 
   const HandleGoogleAuth = async (e) => {
     e.preventDefault();
-    try {
-      const res = await axiosinstance.get("/connect/google");
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
+    let link = process.env.NEXT_PUBLIC_URL + "/connect/google";
+    window.open(link);
+    // try {
+    //   const res = await axiosinstance.get("/connect/google");
+    //   console.log(res);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   const HandleValues = (e) => {

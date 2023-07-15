@@ -15,7 +15,6 @@ import PhoneInput from "react-phone-input-2";
 const RegisterForm = () => {
   const [values, setValues] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
   const redirect = useSearchParams().get("redirect");
   const dispatch = useDispatch();
 
@@ -45,12 +44,8 @@ const RegisterForm = () => {
 
   const HandleGoogleAuth = async (e) => {
     e.preventDefault();
-    try {
-      const res = await axiosinstance.post("/connect/google");
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
+    let link = process.env.NEXT_PUBLIC_URL + "/connect/google";
+    window.location.href = link;
   };
 
   const HandleValues = (e) => {

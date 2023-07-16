@@ -338,6 +338,11 @@ a {
   justify-content: center;
 }
 
+.bottomtextForm.forgotPassword {
+  margin: 15px 0px;
+  justify-content: flex-end;
+}
+
 .bottomtextForm p {
   font-size: 1rem;
   font-weight: 500;

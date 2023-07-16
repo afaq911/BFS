@@ -10,23 +10,23 @@ let progressArray = [
   { id: 4, label: "Payment" },
 ];
 
-const CheckoutProgress = ({ stage, setStage }) => {
+const CheckoutProgress = ({ stage, setStage, currentUser }) => {
   let width = stage * 33.3;
 
   return (
     <>
       <div className="checkoutProgressMainHeading">
-        {stage > 0 ? (
+        {stage === 0 || (currentUser && stage === 1) ? (
+          <Link href={"/cart"} className="backtoHomeBtn">
+            Back to Cart
+          </Link>
+        ) : (
           <button
             className="backtoHomeBtn"
             onClick={() => setStage((stg) => stg - 1)}
           >
             Go Back
           </button>
-        ) : (
-          <Link href={"/cart"} className="backtoHomeBtn">
-            Back to Cart
-          </Link>
         )}
 
         <h2>

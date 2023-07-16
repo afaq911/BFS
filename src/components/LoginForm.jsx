@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import GoogleIcon from "@mui/icons-material/Google";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
 import { axiosinstance } from "@/utils/axiosinstance";
 import { ErrorNotificationHandler } from "@/utils/errorHandlers";
@@ -109,6 +109,19 @@ const LoginForm = ({ redirect }) => {
               name="password"
               onChange={HandleValues}
             />
+          </div>
+          <div className="bottomtextForm forgotPassword">
+            <p>
+              <Link
+                href={
+                  params
+                    ? `/forgotpassword?redirect=${params}`
+                    : "/forgotpassword"
+                }
+              >
+                Forgot Password ?
+              </Link>
+            </p>
           </div>
 
           <button onClick={HandleLogin} disabled={isLoading}>

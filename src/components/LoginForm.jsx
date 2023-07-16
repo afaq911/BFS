@@ -52,7 +52,7 @@ const LoginForm = ({ redirect }) => {
 
   const HandleGoogleAuth = async (e) => {
     e.preventDefault();
-    SetRedirectUrl(params);
+    SetRedirectUrl(params ? params : "/");
     let link = process.env.NEXT_PUBLIC_URL + "/connect/google";
     window.location.href = link;
   };

@@ -46,7 +46,7 @@ const RegisterForm = () => {
 
   const HandleGoogleAuth = async (e) => {
     e.preventDefault();
-    SetRedirectUrl(redirect);
+    SetRedirectUrl(redirect ? redirect : "/");
     let link = process.env.NEXT_PUBLIC_URL + "/connect/google";
     window.location.href = link;
   };

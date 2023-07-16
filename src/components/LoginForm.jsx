@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import GoogleIcon from "@mui/icons-material/Google";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
 import { axiosinstance } from "@/utils/axiosinstance";
 import { ErrorNotificationHandler } from "@/utils/errorHandlers";
@@ -21,6 +21,7 @@ const LoginForm = ({ redirect }) => {
   const params = redirect ? redirect : useSearchParams().get("redirect");
   const dispatch = useDispatch();
   const location = window.location.href?.split("?").pop();
+  const router = useRouter();
 
   const Redirect = (url) => {
     window.location.href = url;
@@ -70,8 +71,8 @@ const LoginForm = ({ redirect }) => {
           setIsLoading(false);
 
           // -------------------------------------
-          ClearRedirectUrl();
           googleRedirect ? Redirect(googleRedirect) : Redirect("/");
+          ClearRedirectUrl();
 
           // ------------------------- Set User with redux toolkit
           dispatch(userLogin(res.data));
@@ -84,6 +85,14 @@ const LoginForm = ({ redirect }) => {
       GetUserLoginInfo();
     }
   }, [location]);
+
+  // Navigate to forgot password -----------------------
+
+  const HandleNavigateForgotPass = (e) => {
+    e.preventDefault();
+    SetRedirectUrl(params ? params : "/login");
+    router.push("/forgotpassword");
+  };
 
   return (
     <div className="mainAuthenticationFormCard">
@@ -111,16 +120,8 @@ const LoginForm = ({ redirect }) => {
             />
           </div>
           <div className="bottomtextForm forgotPassword">
-            <p>
-              <Link
-                href={
-                  params
-                    ? `/forgotpassword?redirect=${params}`
-                    : "/forgotpassword"
-                }
-              >
-                Forgot Password ?
-              </Link>
+            <p onClick={HandleNavigateForgotPass}>
+              <a href="">Forgot Password ?</a>
             </p>
           </div>
 

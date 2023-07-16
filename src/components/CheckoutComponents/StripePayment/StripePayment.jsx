@@ -5,6 +5,7 @@ import StripeCheckoutForm from "./StripeCheckoutForm";
 import { axiosinstance } from "@/utils/axiosinstance";
 import { useSelector } from "react-redux";
 import CheckoutPayFormSkelton from "@/components/Skeltons/CheckoutPayFormSkelton";
+import { Skeleton } from "@mui/material";
 
 const stripePromise = loadStripe(
   "pk_test_51KFJnqCSsuQl1s5iYKUTclxtP86dyyc8CD5Uaof5n7oiNtY05colukj68wmB77DAUJtFSHworGoCz0bP2YYoTbe100C6cf4WWk"
@@ -57,8 +58,13 @@ const StripePayment = ({ values }) => {
   return (
     <div className="mainStripePaymentContainer">
       {isLoading ? (
-        <div className="loader_checkout_form">
-          <CheckoutPayFormSkelton />
+        <div className="mainLoaderContainer">
+          <div className="loader_checkout_form">
+            <CheckoutPayFormSkelton />
+          </div>
+          <div className="skeltonBtn">
+            <Skeleton width={"200%"} height={"200%"} />
+          </div>
         </div>
       ) : (
         <div className="innerStripPaymentContainer">

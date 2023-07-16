@@ -5,6 +5,7 @@ import NextTopLoader from "nextjs-toploader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-phone-input-2/lib/style.css";
+import GoogleRedirectProvider from "@/providers/RedirectGoogleProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,7 +32,9 @@ export default function RootLayout({ children }) {
       >
         <NextTopLoader color="#FA698E" showSpinner={false} height={4} />
         <ToastContainer />
-        <ReduxProvider>{children}</ReduxProvider>
+        <ReduxProvider>
+          <GoogleRedirectProvider>{children}</GoogleRedirectProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

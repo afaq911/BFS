@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import GoogleIcon from "@mui/icons-material/Google";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -10,12 +10,17 @@ import { useDispatch } from "react-redux";
 import { userLogin } from "@/redux/userSlice";
 import { CircularProgress } from "@mui/material";
 import axios from "axios";
+import { RedirectGoogleContext } from "@/providers/RedirectGoogleProvider";
 
 const LoginForm = ({ redirect }) => {
+  const { googleRedirect, SetRedirectUrl, ClearRedirectUrl } = useContext(
+    RedirectGoogleContext
+  );
   const [values, setValues] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const params = redirect ? redirect : useSearchParams().get("redirect");
   const dispatch = useDispatch();
+  const location = window.location.href?.split("?").pop();
 
   const Redirect = (url) => {
     window.location.href = url;
@@ -47,13 +52,12 @@ const LoginForm = ({ redirect }) => {
 
   const HandleGoogleAuth = async (e) => {
     e.preventDefault();
-    let link =
-      process.env.NEXT_PUBLIC_URL + "/connect/google?redirect_uri=/checkout";
+    SetRedirectUrl(params);
+    let link = process.env.NEXT_PUBLIC_URL + "/connect/google";
     window.location.href = link;
   };
 
-  const location = window.location.href?.split("?").pop();
-
+  // Verify User With Tokken -----------------------------------------------------
   useEffect(() => {
     if (location?.includes("id_token")) {
       const GetUserLoginInfo = async () => {
@@ -62,10 +66,15 @@ const LoginForm = ({ redirect }) => {
           const res = await axios.get(
             process.env.NEXT_PUBLIC_URL + "/auth/google/callback?" + location
           );
-          dispatch(userLogin(res.data));
           toast.success("Logged In Successfully");
           setIsLoading(false);
-          params ? Redirect(params) : Redirect("/");
+
+          // -------------------------------------
+          ClearRedirectUrl();
+          googleRedirect ? Redirect(googleRedirect) : Redirect("/");
+
+          // ------------------------- Set User with redux toolkit
+          dispatch(userLogin(res.data));
         } catch (error) {
           setIsLoading(false);
           ErrorNotificationHandler(error);
@@ -124,9 +133,7 @@ const LoginForm = ({ redirect }) => {
         <div className="bottomtextForm">
           <p>
             Don&apos;t have an account ?{" "}
-            <Link
-              href={redirect ? `/register?redirect=${redirect}` : "/register"}
-            >
+            <Link href={params ? `/register?redirect=${params}` : "/register"}>
               Sign Up
             </Link>
           </p>

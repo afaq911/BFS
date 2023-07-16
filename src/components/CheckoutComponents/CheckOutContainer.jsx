@@ -33,7 +33,7 @@ const CheckOutContainer = () => {
   return (
     <div className="mainCheckoutContainer">
       <div className="innerCheckoutContainer">
-        <CheckoutProgress stage={stage} />
+        <CheckoutProgress stage={stage} setStage={setStage} />
 
         {stage === 0 && <CheckOutAuth setStage={setStage} />}
         {stage === 1 && (

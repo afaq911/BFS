@@ -469,6 +469,11 @@
     padding: 14px 0px;
     width: 100%;
   }
+
+  .cartProductOrderInfo .removeCartProductBtn {
+    grid-column: 1 / span 2 !important;
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 370px) {

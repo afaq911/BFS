@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import GoogleIcon from "@mui/icons-material/Google";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -11,8 +11,10 @@ import { userLogin } from "@/redux/userSlice";
 import { CircularProgress } from "@mui/material";
 import { phone_options } from "@/constants/WebData";
 import PhoneInput from "react-phone-input-2";
+import { RedirectGoogleContext } from "@/providers/RedirectGoogleProvider";
 
 const RegisterForm = () => {
+  const { SetRedirectUrl } = useContext(RedirectGoogleContext);
   const [values, setValues] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const redirect = useSearchParams().get("redirect");
@@ -44,6 +46,7 @@ const RegisterForm = () => {
 
   const HandleGoogleAuth = async (e) => {
     e.preventDefault();
+    SetRedirectUrl(redirect);
     let link = process.env.NEXT_PUBLIC_URL + "/connect/google";
     window.location.href = link;
   };

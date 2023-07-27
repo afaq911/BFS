@@ -35,6 +35,11 @@
   width: 90%;
 }
 
+.desktop_newsletter_btn:disabled,
+.mob_newsLetter_btn:disabled {
+  opacity: 0.8;
+}
+
 .newsLetterTab h2 {
   font-size: 2rem;
   font-weight: 600;

@@ -98,6 +98,11 @@
   justify-content: center;
 }
 
+.desktop_newsletter_btn:disabled,
+.mob_newsLetter_btn:disabled {
+  opacity: 0.8;
+}
+
 /* RESPONSIVE CSS STYLING ------------------------------------------------------------------ */
 
 @media (max-width: 950px) {
